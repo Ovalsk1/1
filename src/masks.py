@@ -1,5 +1,5 @@
 def get_mask_card_number(card_number: int) -> str:
-    """Функция которая принимает номер карты и возвращает маску номера по правилу"""
+    """Функция которая принимает номер карты и возвращает маску номера"""
     card_number_str = str(card_number)
     part1 = card_number_str[:4]  # Первая часть номера
     part2 = card_number_str[4:6]  # Вторая часть номера
@@ -16,7 +16,4 @@ def get_mask_account(account_number: int) -> str:
     return f"{mask}{part_account_number}"  # Собираем вместе
 
 
-card_number = int(input())
-account_number = int(input())
-print(get_mask_card_number(card_number))
-print(get_mask_account(account_number))
+

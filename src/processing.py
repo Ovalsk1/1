@@ -2,7 +2,12 @@ from datetime import datetime
 from typing import Dict, Any
 
 MIN_DATE = datetime.min  # Минимально возможная дата
-
+dictionaries_list = [
+    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+    {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
+]  # Пример ввода списка словарей
 
 def filter_by_state(dictionaries_list: list[dict[str, object]], state: str = "EXECUTED") -> list[dict[str, object]]:
     """Функция возвращает отсортированный список словарей."""
@@ -26,11 +31,5 @@ def sort_by_date(dictionaries_list: list[Dict[str, Any]], reverse: bool = True) 
     return sorted(dictionaries_list, key=parse_date, reverse=reverse)
 
 
-dictionaries_list = [
-    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-    {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
-]  # Пример ввода списка словарей
-print(filter_by_state(dictionaries_list, state="EXECUTED"))  # Вызов функции
-print(sort_by_date(dictionaries_list, reverse=True))
+
+

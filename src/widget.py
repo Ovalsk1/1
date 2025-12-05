@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def mask_account_card(account_string: str) -> str:
     """Принимает на вход строку с названием и номером, используя функции из masks выводит
     замаскированный номер карты или счета"""

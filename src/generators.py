@@ -74,5 +74,5 @@ def card_number_generator(start: int, end: int) -> Generator[str, None, None]:
     """Генератор, выдающий номера банковских карт в формате XXXX XXXX XXXX XXXX."""
     for i in range(start, end + 1):
         card_number = f"{i:016d}"
-        formatted_number = " ".join(card_number[i:i+4] for i in range(0, 16, 4))
+        formatted_number = " ".join(card_number[i : i + 4] for i in range(0, 16, 4))
         yield formatted_number

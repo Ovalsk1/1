@@ -2,7 +2,7 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 
 
 def test_filter_by_currency() -> None:
-    """ Тест функции 'filter_by_currency'"""
+    """Тест функции 'filter_by_currency'"""
     usd_trans = filter_by_currency(transactions, currency="USD")
     assert len(list(usd_trans)) == 3
     assert all(text["operationAmount"]["currency"]["code"] == "USD" for text in usd_trans)

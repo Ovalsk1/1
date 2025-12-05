@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Dict, Any
+from typing import Any, Dict
 
 MIN_DATE = datetime.min  # Минимально возможная дата
 dictionaries_list = [
@@ -8,6 +8,7 @@ dictionaries_list = [
     {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
     {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
 ]  # Пример ввода списка словарей
+
 
 def filter_by_state(dictionaries_list: list[dict[str, object]], state: str = "EXECUTED") -> list[dict[str, object]]:
     """Функция возвращает отсортированный список словарей."""
@@ -29,7 +30,3 @@ def parse_date(dictionary: Dict[str, Any]) -> datetime:
 def sort_by_date(dictionaries_list: list[Dict[str, Any]], reverse: bool = True) -> list[dict[str, Any]]:
     """Функция для сортировки списка по дате"""
     return sorted(dictionaries_list, key=parse_date, reverse=reverse)
-
-
-
-

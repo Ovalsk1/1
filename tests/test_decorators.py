@@ -1,6 +1,6 @@
 import pytest
 
-from src.decorators import log  # Импортируем декоратор из вашего модуля
+from src.decorators import log  # Импортируем декоратор
 
 
 # Тест на успешное выполнение функции (при логировании в файл)

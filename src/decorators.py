@@ -2,11 +2,13 @@ import functools
 import logging
 from typing import Any, Callable, Optional
 
-# Настройка базового логера
-logging.basicConfig(level=logging.INFO, format="%(message)s")
+logging.basicConfig(level=logging.INFO, format="%(message)s")  # Настройка базового логера
 
 
 def log(filename: Optional[str] = None) -> Callable:
+    """Декоратор который обрабатывает срабатывание функции и записывает
+    результат в заданный документ или выводит в консоль"""
+
     def decorator(func: Callable) -> Callable:
         @functools.wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:

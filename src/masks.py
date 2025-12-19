@@ -14,6 +14,3 @@ def get_mask_account(account_number: int) -> str:
     mask = "**"  # Скрытая часть номера
     part_account_number = account_number_str[-4:]  # Оставшаяся часть номера
     return f"{mask}{part_account_number}"  # Собираем вместе
-
-
-

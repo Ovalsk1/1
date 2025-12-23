@@ -1,6 +1,37 @@
 import json
+import logging
+import os
 from pathlib import Path
 from typing import Dict, List
+
+# Относительный путь к папке "logs"
+logs_folder = Path(__file__).parent.parent / "logs"
+
+# Настраиваем логирование
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)  # Устанавливаем уровень логирования на INFO
+
+# Создаем файловый хэндлер для INFO и выше
+file_handler = logging.FileHandler(os.path.join(logs_folder, "utils_log.log"), mode="w")
+file_handler.setLevel(logging.INFO)  # Устанавливаем уровень логирования для хэндлера
+
+# Создаем форматтер
+file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+file_handler.setFormatter(file_formatter)
+
+# Добавляем хэндлер к логгеру
+logger.addHandler(file_handler)
+
+# Создаем файловый хэндлер для ошибок (уровень ERROR и выше)
+error_handler = logging.FileHandler(os.path.join(logs_folder, "errors_utils_log.log"), mode="w")
+error_handler.setLevel(logging.ERROR)  # Устанавливаем уровень логирования для хэндлера
+
+# Создаем форматтер для ошибок
+error_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+error_handler.setFormatter(error_formatter)
+
+# Добавляем хэндлер для ошибок к логгеру
+logger.addHandler(error_handler)
 
 
 def load_financial_transactions(json_file_path: str) -> List[Dict]:

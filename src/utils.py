@@ -9,11 +9,11 @@ logs_folder = Path(__file__).parent.parent / "logs"
 
 # Настраиваем логирование
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)  # Устанавливаем уровень логирования на INFO
+logger.setLevel(logging.DEBUG)  # Устанавливаем уровень логирования на DEBUG
 
-# Создаем файловый хэндлер для INFO и выше
+# Создаем файловый хэндлер для DEBUG и выше
 file_handler = logging.FileHandler(os.path.join(logs_folder, "utils_log.log"), mode="w")
-file_handler.setLevel(logging.INFO)  # Устанавливаем уровень логирования для хэндлера
+file_handler.setLevel(logging.DEBUG)  # Устанавливаем уровень логирования для хэндлера
 
 # Создаем форматтер
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")

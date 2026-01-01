@@ -51,4 +51,3 @@ def load_financial_transactions(json_file_path: Path) -> List[Dict]:
         # Невозможно загрузить JSON или файл не найден
         return []
 
-

@@ -3,6 +3,7 @@ from src.utils import load_financial_transactions
 from src.cvs_excel_func import read_financial_transactions_from_csv, read_financial_transactions_from_excel
 from src.processing import filter_by_state, sort_by_date
 from src.generators import filter_by_currency, transaction_descriptions
+from src.bank_utils import process_bank_search
 
 def main():
     # Приветствие пользователя и предложение выбрать источник данных
@@ -67,7 +68,7 @@ def main():
     # Фильтрация по описанию
     if input("Отфильтровать список транзакций по определенному слову в описании? (Да/Нет): ").strip().lower() == "да":
         keyword = input("Введите слово для поиска в описании: ").strip()
-        filtered_operations = [txn for txn in filtered_operations if keyword.lower() in txn.get("description", "").lower()]
+        filtered_operations = process_bank_search(filtered_operations, keyword)
 
     # Вывод итогового списка операций
     if filtered_operations:

@@ -10,7 +10,7 @@ dictionaries_list = [
 ]  # Пример ввода списка словарей
 
 
-def filter_by_state(dictionaries_list: list[dict[str, object]], state: str = "EXECUTED") -> list[dict[str, object]]:
+def filter_by_state(operations: list[dict[str, object]], state: str = "EXECUTED") -> list[dict[str, object]]:
     """Функция возвращает отсортированный список словарей."""
     sorted_dictionaries_list = []  # Список подходящих словарей
     for dictionary in dictionaries_list:

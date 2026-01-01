@@ -34,7 +34,7 @@ error_handler.setFormatter(error_formatter)
 logger.addHandler(error_handler)
 
 
-def load_financial_transactions(json_file_path: str) -> List[Dict]:
+def load_financial_transactions(json_file_path: Path) -> List[Dict]:
     """Конвертирует данные из формата .json в список."""
     try:
         # Открываем файл и читаем его содержимое
@@ -52,5 +52,3 @@ def load_financial_transactions(json_file_path: str) -> List[Dict]:
         return []
 
 
-project_root = Path(__file__).parent.parent  # двигаемся на два уровня вверх (отдельно от *.py файла)
-file_path = project_root / "data" / "operations.json"

@@ -15,13 +15,3 @@ def read_financial_transactions_from_excel(excel_file_path: Path) -> list[dict]:
     return transactions
 
 
-csv_excel_folder = Path(__file__).parent.parent / "csv_excel"
-
-# Пример использования
-csv_file_path = csv_excel_folder / "transactions.csv"
-excel_file_path = csv_excel_folder / "transactions_excel.xlsx"
-
-csv_transactions = read_financial_transactions_from_csv(csv_file_path)
-excel_transactions = read_financial_transactions_from_excel(excel_file_path)
-
-print(csv_transactions)

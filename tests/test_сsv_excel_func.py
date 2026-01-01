@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 import pandas as pd
-from src.сsv_excel_func import read_financial_transactions_from_csv, read_financial_transactions_from_excel
+from src.cvs_excel_func import read_financial_transactions_from_csv, read_financial_transactions_from_excel
 from pathlib import Path
 
 class TestFinancialTransactions(unittest.TestCase):

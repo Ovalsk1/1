@@ -1,16 +1,20 @@
+import csv
 from pathlib import Path
 import pandas as pd
-import csv
+
+data_dir = Path(__file__).parent.parent / "data"
+
 
 def read_financial_transactions_from_csv(file_path: Path) -> list[dict]:
     """
     Функция для чтения CSV-файла и возврата списка словарей.
     """
     result = []
-    with open(file_path, mode='r', newline='', encoding='utf-8-sig') as file:
-        reader = csv.DictReader(file)
+    with open(file_path, mode="r", newline="", encoding="utf-8-sig") as file:
+        reader = csv.reader(file, delimiter=";")
+        keys = next(reader)
         for row in reader:
-            result.append(row)
+            result.append(dict(zip(keys, row)))
     return result
 
 
